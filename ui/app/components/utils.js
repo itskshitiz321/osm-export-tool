@@ -28,56 +28,56 @@ export const AVAILABLE_EXPORT_FORMATS = {
       Geojson <code>.geojson</code>
     </span>
   ),
-  geopackage: (
-    <span key="geopackage">
-      GeoPackage <code>.gpkg</code>
-    </span>
-  ),
+  // geopackage: (
+  //   <span key="geopackage">
+  //     GeoPackage <code>.gpkg</code>
+  //   </span>
+  // ),
   shp: (
     <span key="shp">
       Shapefile <code>.shp</code>
     </span>
-  ),
-  garmin_img: (
-    <span key="garmin_img">
-      Garmin <code>.img</code>
-    </span>
-  ),
-  kml: (
-    <span key="kml">
-      Google Earth <code>.kml</code>
-    </span>
-  ),
-  osm_xml: (
-    <span key="osm_xml">
-      OSM <code>.xml</code>
-    </span>
-  ),
-  osm_pbf: (
-    <span key="osm_pbf">
-      OSM <code>.pbf</code>
-    </span>
-  ),
-  mwm: (
-    <span key="mwm">
-      MAPS.ME <code>.mwm</code>
-    </span>
-  ),
-  osmand_obf: (
-    <span key="osmand_obf">
-      OsmAnd <code>.obf</code>
-    </span>
-  ),
-  mbtiles: (
-    <span key="osmand_obf">
-      MBTiles <code>.mbtiles</code>
-    </span>
-  ),
-  bundle: (
-    <span key="bundle">
-      <a href="http://posm.io/">POSM</a> bundle
-    </span>
   )
+  // garmin_img: (
+  //   <span key="garmin_img">
+  //     Garmin <code>.img</code>
+  //   </span>
+  // ),
+  // kml: (
+  //   <span key="kml">
+  //     Google Earth <code>.kml</code>
+  //   </span>
+  // ),
+  // osm_xml: (
+  //   <span key="osm_xml">
+  //     OSM <code>.xml</code>
+  //   </span>
+  // ),
+  // osm_pbf: (
+  //   <span key="osm_pbf">
+  //     OSM <code>.pbf</code>
+  //   </span>
+  // ),
+  // mwm: (
+  //   <span key="mwm">
+  //     MAPS.ME <code>.mwm</code>
+  //   </span>
+  // ),
+  // osmand_obf: (
+  //   <span key="osmand_obf">
+  //     OsmAnd <code>.obf</code>
+  //   </span>
+  // ),
+  // mbtiles: (
+  //   <span key="osmand_obf">
+  //     MBTiles <code>.mbtiles</code>
+  //   </span>
+  // ),
+  // bundle: (
+  //   <span key="bundle">
+  //     <a href="http://posm.io/">POSM</a> bundle
+  //   </span>
+  // )
 };
 
 export const REQUIRES_FEATURE_SELECTION = {
