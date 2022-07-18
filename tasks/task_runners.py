@@ -88,14 +88,20 @@ class ExportTaskRunner(object):
             run_task_async_scheduled.send(run_uid)
         return run
 
-@dramatiq.actor(max_retries=0,queue_name='default',time_limit=1000*60*60*6)
+@dramatiq.actor(max_retries=0,queue_name='default',time_limit=1000*60*60*6) #6 hour
 def run_task_async_ondemand(run_uid):
-    run_task_remote(run_uid)
+    try:
+        run_task_remote(run_uid)
+    except:
+        pass
     db.close_old_connections()
 
 @dramatiq.actor(max_retries=0,queue_name='scheduled',time_limit=1000*60*60*6)
 def run_task_async_scheduled(run_uid):
-    run_task_remote(run_uid)
+    try:
+        run_task_remote(run_uid)
+    except :
+        pass
     db.close_old_connections()
 
 def run_task_remote(run_uid):
