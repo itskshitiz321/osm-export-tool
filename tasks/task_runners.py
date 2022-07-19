@@ -137,6 +137,7 @@ def run_task(run_uid,run,stage_dir,download_dir):
     LOG.debug('Running ExportRun with id: {0}'.format(run_uid))
     job = run.job
     valid_name = get_valid_filename(job.name)
+    
 
     geom = load_geometry(job.simplified_geom.json)
     export_formats = job.export_formats
@@ -237,7 +238,7 @@ def run_task(run_uid,run,stage_dir,download_dir):
             start_task('geopackage')
 
         if 'shp' in export_formats:
-            shp = Galaxy(settings.GALAXY_API_URL,geom,mapping=mapping,file_name=valid_name)
+            shp = Galaxy(settings.GALAXY_API_URL,geom,mapping=mapping,file_name=f"{valid_name}_{run_uid}")
             # shp = tabular.Shapefile(join(stage_dir,valid_name),mapping)
             # tabular_outputs.append(shp)
             start_task('shp')
@@ -358,7 +359,7 @@ def run_task(run_uid,run,stage_dir,download_dir):
             start_task('geopackage')
 
         if 'shp' in export_formats:
-            shp = Galaxy(settings.GALAXY_API_URL,geom,mapping=mapping,file_name=valid_name)
+            shp = Galaxy(settings.GALAXY_API_URL,geom,mapping=mapping,file_name=f"{valid_name}_{run_uid}")
             # shp = tabular.Shapefile(join(stage_dir,valid_name),mapping)
             # tabular_outputs.append(shp)
             start_task('shp')
