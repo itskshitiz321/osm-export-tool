@@ -15,7 +15,7 @@ from django.contrib.gis.admin import GeoModelAdmin
 from django.utils.safestring import mark_safe
 from django.core.urlresolvers import reverse
 import validators
-
+import requests
 
 class ExportRun(models.Model):
     """
@@ -92,7 +92,11 @@ class ExportTask(models.Model):
             valid=validators.url(fname)
             if valid==True:
                 download_url = fname
-                filesize_bytes=self.filesize_bytes
+                try:
+                    resp = requests.head(download_url)
+                    filesize_bytes=int(resp.headers['Content-Length'])
+                except: 
+                    filesize_bytes=self.filesize_bytes
                 absolute_download_url=download_url
                 try :
                     value = download_url.split('/')
